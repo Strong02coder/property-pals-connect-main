@@ -10,8 +10,13 @@ interface HeroSectionState {
   animationComplete: boolean;
 }
 
-class HeroSection extends Component<{}, HeroSectionState> {
-  constructor(props: {}) {
+interface HeroSectionProps {
+  theme: string;
+  toggleTheme: () => void;
+}
+
+class HeroSection extends Component<HeroSectionProps, HeroSectionState> {
+  constructor(props: HeroSectionProps) {
     super(props);
     this.state = {
       animationComplete: false
@@ -83,7 +88,10 @@ class HeroSection extends Component<{}, HeroSectionState> {
         
         {/* Theme Toggle */}
         <div className="absolute top-4 right-4 z-10">
-          <ThemeToggle />
+          <ThemeToggle 
+            theme={this.props.theme} 
+            toggleTheme={this.props.toggleTheme} 
+          />
         </div>
         
         {/* Content */}
