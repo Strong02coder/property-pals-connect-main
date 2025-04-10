@@ -1,0 +1,25 @@
+@import './styles/theme.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --estate-primary: #FFD700;
+  --estate-secondary: #E5C400;
+  --estate-dark: #1A1F2C;
+  --estate-light: #F5F5F5;
+  --estate-black: #111827;
+  --estate-success: #10B981;
+  --estate-warning: #F59E0B;
+  --estate-error: #EF4444;
+}
+
+html.dark {
+  --estate-light: #2A303C;
+}
+
+body {
+  @apply bg-estate-light text-estate-dark dark:bg-estate-dark dark:text-estate-light transition-colors duration-300;
+}
+
+/* Additional global styles */
